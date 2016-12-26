@@ -1,0 +1,24 @@
+{
+  "name": "song-tracker",
+  "version": "1.0.0",
+  "description": "Record the way each song was played at FLC",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/308code/song-tracker.git"
+  },
+  "author": "Bill Camphire <bill@continuingdevelopment.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/308code/song-tracker/issues"
+  },
+  "homepage": "https://github.com/308code/song-tracker#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "node-persist": "^2.0.7"
+  }
+}
