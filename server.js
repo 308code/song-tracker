@@ -16,11 +16,10 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(middleware.logger);
 app.use(bodyParser.json());
 
-////////////////////////////////////////////////////////////////////
-//DATA//
+////////////////////////  DATA  ////////////////////////////////////
 var data = [{
   id: 1,
-  title: '10000 Reasons',
+  title: '10,000 Reasons',
   aka: ["Bless The Lord"],
   machine: 'A',
   played: '2016-12-17',
@@ -64,6 +63,72 @@ app.delete('/api/song/:id',function(req, res){
     data = _.without(data,matchedSong);
     res.json(matchedSong);
   }
+});
+
+app.put('/api/song/:id',function(req, res){
+  var matchedSong = _.findWhere(data, {id: parseInt(req.params.id)});
+  var body = _.pick(req.body,'title','aka','machine','played','sequence',
+   'tithing','note');
+   var validAttributes = {};
+
+   if(! matchedSong){
+     return res.status(404).send();
+   }
+   if(body.hasOwnProperty('title')){
+     if(_.isString(body.title) && body.title.trim().length > 0){
+       validAttributes.title = body.title.trim();
+     }else{
+       return res.status(400).json({"error": "title must exist and not be empty."});
+     }
+   }
+   if(body.hasOwnProperty('aka')){
+     if(_.isArray(body.aka) && body.aka.length > 0){
+       validAttributes.aka = body.aka;
+     }else{
+       return res.status(400).json({"error": "aka must exist."});
+     }
+   }
+   if(body.hasOwnProperty('machine')){
+     if(_.isString(body.machine) &&
+     (body.machine.trim() === 'A' ||
+     body.machine.trim() === 'B')){
+       validAttributes.machine = body.machine.trim();
+     }else{
+       return res.status(400).json({"error": "machine must exist and be either A or B."});
+     }
+   }
+   if(body.hasOwnProperty('played')){
+     if(_.isString(body.played) && body.played.trim().length === 10){
+       validAttributes.played = body.played.trim();
+     }else{
+       return res.status(400).json({"error":
+       "played must be in the proper date format: yyyy-MM-dd"});
+     }
+   }
+   if(body.hasOwnProperty('sequence')){
+     if(_.isArray(body.sequence) && body.sequence.length > 0){
+       validAttributes.sequence = body.sequence;
+     }else{
+       return res.status(400).json({"error": "sequence must exist."});
+     }
+   }
+   if(body.hasOwnProperty('tithing')){
+     if(_.isBoolean(body.tithing)){
+       validAttributes.tithing = body.tithing;
+     }else{
+       return res.status(400).json({"error": "tithing must be true or false."});
+     }
+   }
+   if(body.hasOwnProperty('note')){
+     if(_.isString(body.note)){
+       validAttributes.note = body.note.trim();
+     }else{
+       return res.status(400).json({"error":
+       "not must be a string."});
+     }
+   }
+   _.extend(matchedSong,validAttributes);
+   res.json(matchedSong);
 });
 
 app.get('/api/song/:id', function(req, res) {
