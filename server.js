@@ -13,7 +13,6 @@ var PORT = process.env.PORT || 3000;
 //app.set('view engine', 'ejs');
 
 mongoose.Promise = global.Promise;
-console.log(config.getDbConnectionString());
 mongoose.connect(config.getDbConnectionString());
 //setupController(app);
 apiController(app);
