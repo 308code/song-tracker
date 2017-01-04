@@ -40,7 +40,7 @@ module.exports = function(app) {
 
     //GET a single song instance
     app.get('/api/song/:id', function(req, res) {
-      var queryParams = validateQueryParams(req);
+        var queryParams = validateQueryParams(req);
         Songs.findById({
             _id: req.params.id
         }, function(err, song) {
@@ -57,8 +57,8 @@ module.exports = function(app) {
     //CREATE an new entry if _id doesn't exist or update if it does.
     app.post('/api/songs', function(req, res) {
         if (req.body._id) {
-            //update existing show
-            Shows.findByIdAndUpdate(req.body._id, {
+            //update existing song
+            Songs.findByIdAndUpdate(req.body._id, {
                 title: req.body.title,
                 aka: req.body.aka,
                 machine: req.body.machine,
@@ -98,18 +98,65 @@ module.exports = function(app) {
         }
     });
 
-    //DELETE a single song instance
-    app.delete('/api/song/:id', function(req, res) {
-        Songs.findByIdAndRemove(req.params.id, function(err, song) {
-            if (err) {
-                res.status(400).send(err.errors);
-            } else if (song) {
-                res.status(202).send(1);
-            } else {
-                res.sendStatus(404);
-            }
+    ///////////////
+    app.post('/api/song/:id', function(req, res) {
+        Songs.findById({
+            _id: req.params.id
+        }, function(err, song) {
+            if (err) throw err;
+            var newSong = Songs({
+              title: song.title,
+              aka: song.aka,
+              machine: song.machine,
+              played: song.played,
+              sequence: song.sequence,
+              tithing: song.tithing,
+              note: song.note
+            });
+            newSong.save(function(err, song) {
+                if (err) throw err;
+                console.log(song.title);
+                res.send(song);
+            });
         });
     });
+
+
+    //DELETE a single song instance
+    app.delete('/api/song/:id', function(req, res) {
+        Songs.findByIdAndRemove(req.params.id, function(err) {
+            if (err) {
+                res.status(400).send(err.errors);
+            }
+            Songs.find({}, null, {
+                sort: {
+                    played: -1
+                }
+            }, function(err, songs) {
+                if (err) {
+                    res.status(400).send(err.errors);
+                } else if (songs) {
+                    res.send(songs);
+                } else {
+                    res.sendStatus(404);
+                }
+            });
+        });
+    });
+
+    // //////////////
+    // app.delete('/api/show/delete/:id', function(req, res) {
+    //     Shows.findByIdAndRemove(req.params.id,
+    //         function(err) {
+    //             if (err) throw err;
+    //             Shows.find({}, function(err, shows) {
+    //                 if (err) throw err;
+    //                 res.send(shows);
+    //             });
+    //             //res.send('Successfully Removed!');
+    //         });
+    // });
+    // //////////////
 
     //UPDATE a single song instance from queryParams
     app.put('/api/song/:id', function(req, res) {
@@ -184,73 +231,4 @@ module.exports = function(app) {
         }
         return validParams;
     }
-
-    // function validateBodyAttributes(req) {
-    //     var validAttributes = {};
-    //     var body = _.pick(req.body, 'title', 'aka',
-    //         'machine', 'played', 'sequence', 'tithing', 'note');
-    //
-    //     if (body.title) {
-    //         if (_.isString(body.title) && body.title.trim().length > 0) {
-    //             validAttributes.title = body.title.trim();
-    //         } else {
-    //             console.log("title must exist and not be empty.");
-    //         }
-    //     }
-    //     if (body.aka) {
-    //         if (_.isArray(body.aka)) {
-    //             validAttributes.aka = body.aka;
-    //         } else if (_.isString(body.aka)) {
-    //             validAttributes.aka = [body.aka];
-    //         } else {
-    //             console.log("aka must be an array of strings.");
-    //         }
-    //     }
-    //     if (body.machine) {
-    //         if (_.isString(body.machine) &&
-    //             body.machine.trim().length === 1) {
-    //             validAttributes.machine = body.machine.trim();
-    //         } else {
-    //             console.log("machine must exist and can only be one character.");
-    //         }
-    //     }
-    //     if (body.played) {
-    //         var changedValue = new Date(body.played);
-    //         if (_.isDate(changedValue)) {
-    //             validAttributes.played = changedValue;
-    //         } else {
-    //             console.log("played must be a date.");
-    //         }
-    //     }
-    //     if (body.sequence) {
-    //         if (_.isArray(body.sequence)) {
-    //             validAttributes.sequence = body.sequence;
-    //         } else if (_.isString(body.sequence)) {
-    //             validAttributes.sequence = [body.sequence];
-    //         } else {
-    //             console.log("sequence must be an array of strings.");
-    //         }
-    //     }
-    //     if (body.tithing) {
-    //         if (_.isBoolean(body.tithing)) {
-    //             validAttributes.tithing = body.tithing;
-    //         } else if (body.tithing.trim() === 'true' ||
-    //             body.tithing.trim() === 't') {
-    //             validAttributes.tithing = true;
-    //         } else if (body.tithing.trim() === 'false' ||
-    //             body.tithing.trim() === 'f') {
-    //             validAttributes.tithing = false;
-    //         } else {
-    //             console.log("tithing must be a boolean.");
-    //         }
-    //     }
-    //     if (body.note) {
-    //         if (_.isString(body.note)) {
-    //             validAttributes.note = body.note.trim();
-    //         } else {
-    //             console.log("note must be a string.");
-    //         }
-    //     }
-    //     return validAttributes;
-    // }
 }

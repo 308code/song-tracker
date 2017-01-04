@@ -1,0 +1,49 @@
+<div class='container'>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='title'>Title:</label>
+        <input class='col-md-10' type='text' disabled='true' id='title'
+        ng-model="song.title" />
+    </div>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='aka'>Also Known As:</label>
+        <div>
+          <table>
+            <tr>
+              <td ng-repeat="x in song.aka track by $index">
+                <div ng-if='$index %2 === 0 && x' class='even'>{{x}}</div>
+                <div ng-if='$index %2 !== 0 && x' class='odd'>{{x}}</div>
+              </td>
+            </tr>
+          </table>
+        </div>
+    </div>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='machine'>Machine:</label>
+        <input class='col-md-1' type='text' disabled='true' id='machine'
+        ng-model="song.machine" />
+        <label class='col-md-2 alignRight' for='tithing'>Tithing Selection:</label>
+        <input class='col-md-1' type='checkbox' disabled='true' id='tithing'
+        ng-model="song.tithing"/>
+        <!--col-md-offset-1-->
+        <label class='col-md-2 col-md-offset-1 alignRight' for='played'>Song Played:</label>
+        <input class='col-md-3' type='date' ng-model='played' disabled='true'  id='played'/>
+    </div>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='aka'>Sequence:</label>
+        <div>
+          <table>
+            <tr>
+              <td ng-repeat="x in song.sequence track by $index">
+                <div ng-if='$index %2 === 0 && x' class='even'>{{x}}</div>
+                <div ng-if='$index %2 !== 0 && x' class='odd'>{{x}}</div>
+              </td>
+            </tr>
+          </table>
+        </div>
+    </div>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='aka'>Note:</label>
+        <input class='col-md-10' type='text' disabled='true' id='note'
+        ng-model="song.note" />
+    </div>
+</div>

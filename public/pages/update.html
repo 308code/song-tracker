@@ -1,0 +1,128 @@
+<div class='container'>
+  <br>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='title'>Title:</label>
+        <input class='col-md-10' type='text' ng-model='song.title'/>
+    </div>
+    <br>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='aka'>Also Known As:</label>
+        <div>
+          <container>
+            <input id='aka0' ng-model='song.aka[0]' class='akaInput col-md-2' ng-if="song.aka[0]"/>
+            <input id='aka0' ng-model="aka[0]" class='akaInput col-md-2' ng-if="! song.aka[0]"/>
+            <input id='aka1' ng-model="song.aka[1]" class='akaInput col-md-2' ng-if="song.aka[1]"/>
+            <input id='aka1' ng-model="aka[1]" class='akaInput col-md-2' ng-if="! song.aka[1]"/>
+            <input id='aka2' ng-model="song.aka[2]" class='akaInput col-md-2' ng-if="song.aka[2]"/>
+            <input id='aka2' ng-model="aka[2]" class='akaInput col-md-2' ng-if="! song.aka[2]"/>
+            <input id='aka3' ng-model="song.aka[3]" class='akaInput col-md-2' ng-if="song.aka[3]"/>
+            <input id='aka3' ng-model="aka[3]" class='akaInput col-md-2' ng-if="! song.aka[3]"/>
+          </container>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='machine'>Machine:</label>
+        <input class='col-md-1' type='text' id='machine' ng-model="song.machine" />
+        <label class='col-md-2 alignRight' for='tithing'>Tithing Selection:</label>
+        <input class='col-md-1' type='checkbox' id='tithing' ng-model="song.tithing" />
+        <!--col-md-offset-1-->
+        <label class='col-md-2 col-md-offset-1 alignRight' for='played'>Song Played:</label>
+        <input class='col-md-3' type='date' ng-model='played' id='played'/>
+    </div>
+    <br>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='aka'>Sequence:</label>
+            <input id='seq0' ng-model="song.sequence[0]" class='seqInput col-md-1' ng-if="song.sequence[0]"/>
+            <input id='seq0' ng-model="sequence[0]" class='seqInput col-md-1' ng-if="! song.sequence[0]"/>
+            <input id='seq1' ng-model="song.sequence[1]" class='seqInput col-md-1' ng-if="song.sequence[1]"/>
+            <input id='seq1' ng-model="sequence[1]" class='seqInput col-md-1' ng-if="! song.sequence[1]"/>
+            <input id='seq2' ng-model="song.sequence[2]" class='seqInput col-md-1' ng-if="song.sequence[2]"/>
+            <input id='seq2' ng-model="sequence[2]" class='seqInput col-md-1' ng-if="! song.sequence[2]"/>
+            <input id='seq3' ng-model="song.sequence[3]" class='seqInput col-md-1' ng-if="song.sequence[3]"/>
+            <input id='seq3' ng-model="sequence[3]" class='seqInput col-md-1' ng-if="! song.sequence[3]"/>
+            <input id='seq4' ng-model="song.sequence[4]" class='seqInput col-md-1' ng-if="song.sequence[4]"/>
+            <input id='seq4' ng-model="sequence[4]" class='seqInput col-md-1' ng-if="! song.sequence[4]"/>
+            <input id='seq5' ng-model="song.sequence[5]" class='seqInput col-md-1' ng-if="song.sequence[5]"/>
+            <input id='seq5' ng-model="sequence[5]" class='seqInput col-md-1' ng-if="! song.sequence[5]"/>
+            <input id='seq6' ng-model="song.sequence[6]" class='seqInput col-md-1' ng-if="song.sequence[6]"/>
+            <input id='seq6' ng-model="sequence[6]" class='seqInput col-md-1' ng-if="! song.sequence[6]"/>
+            <input id='seq7' ng-model="song.sequence[7]" class='seqInput col-md-1' ng-if="song.sequence[7]"/>
+            <input id='seq7' ng-model="sequence[7]" class='seqInput col-md-1' ng-if="! song.sequence[7]"/>
+            <input id='seq8' ng-model="song.sequence[8]" class='seqInput col-md-1' ng-if="song.sequence[8]"/>
+            <input id='seq8' ng-model="sequence[8]" class='seqInput col-md-1' ng-if="! song.sequence[8]"/>
+      </div><!--ends row-->
+      <div class="row">
+            <label class='col-md-2'></label>
+            <input id='seq9' ng-model="song.sequence[9]" class='seqInput col-md-1' ng-if="song.sequence[9]"/>
+            <input id='seq9' ng-model="sequence[9]" class='seqInput col-md-1' ng-if="! song.sequence[9]"/>
+            <input id='seq10' ng-model="song.sequence[10]" class='seqInput col-md-1' ng-if="song.sequence[10]"/>
+            <input id='seq10' ng-model="sequence[10]" class='seqInput col-md-1' ng-if="! song.sequence[10]"/>
+            <input id='seq11' ng-model="song.sequence[11]" class='seqInput col-md-1' ng-if="song.sequence[11]"/>
+            <input id='seq11' ng-model="sequence[11]" class='seqInput col-md-1' ng-if="! song.sequence[11]"/>
+            <input id='seq12' ng-model="song.sequence[12]" class='seqInput col-md-1' ng-if="song.sequence[12]"/>
+            <input id='seq12' ng-model="sequence[12]" class='seqInput col-md-1' ng-if="! song.sequence[12]"/>
+            <input id='seq13' ng-model="song.sequence[13]" class='seqInput col-md-1' ng-if="song.sequence[13]"/>
+            <input id='seq13' ng-model="sequence[13]" class='seqInput col-md-1' ng-if="! song.sequence[13]"/>
+            <input id='seq14' ng-model="song.sequence[14]" class='seqInput col-md-1' ng-if="song.sequence[14]"/>
+            <input id='seq14' ng-model="sequence[14]" class='seqInput col-md-1' ng-if="! song.sequence[14]"/>
+            <input id='seq15' ng-model="song.sequence[15]" class='seqInput col-md-1' ng-if="song.sequence[15]"/>
+            <input id='seq15' ng-model="sequence[15]" class='seqInput col-md-1' ng-if="! song.sequence[15]"/>
+            <input id='seq16' ng-model="song.sequence[16]" class='seqInput col-md-1' ng-if="song.sequence[16]"/>
+            <input id='seq16' ng-model="sequence[16]" class='seqInput col-md-1' ng-if="! song.sequence[16]"/>
+            <input id='seq17' ng-model="song.sequence[17]" class='seqInput col-md-1' ng-if="song.sequence[17]"/>
+            <input id='seq17' ng-model="sequence[17]" class='seqInput col-md-1' ng-if="! song.sequence[17]"/>
+          </div><!--ends row-->
+          <div class="row">
+            <label class='col-md-2'></label>
+            <input id='seq18' ng-model="song.sequence[18]" class='seqInput col-md-1' ng-if="song.sequence[18]"/>
+            <input id='seq18' ng-model="sequence[18]" class='seqInput col-md-1' ng-if="! song.sequence[18]"/>
+            <input id='seq19' ng-model="song.sequence[19]" class='seqInput col-md-1' ng-if="song.sequence[19]"/>
+            <input id='seq19' ng-model="sequence[19]" class='seqInput col-md-1' ng-if="! song.sequence[19]"/>
+            <input id='seq20' ng-model="song.sequence[20]" class='seqInput col-md-1' ng-if="song.sequence[20]"/>
+            <input id='seq20' ng-model="sequence[20]" class='seqInput col-md-1' ng-if="! song.sequence[20]"/>
+            <input id='seq21' ng-model="song.sequence[21]" class='seqInput col-md-1' ng-if="song.sequence[21]"/>
+            <input id='seq21' ng-model="sequence[21]" class='seqInput col-md-1' ng-if="! song.sequence[21]"/>
+            <input id='seq22' ng-model="song.sequence[22]" class='seqInput col-md-1' ng-if="song.sequence[22]"/>
+            <input id='seq22' ng-model="sequence[22]" class='seqInput col-md-1' ng-if="! song.sequence[22]"/>
+            <input id='seq23' ng-model="song.sequence[23]" class='seqInput col-md-1' ng-if="song.sequence[23]"/>
+            <input id='seq23' ng-model="sequence[23]" class='seqInput col-md-1' ng-if="! song.sequence[23]"/>
+            <input id='seq24' ng-model="song.sequence[24]" class='seqInput col-md-1' ng-if="song.sequence[24]"/>
+            <input id='seq24' ng-model="sequence[24]" class='seqInput col-md-1' ng-if="! song.sequence[24]"/>
+            <input id='seq25' ng-model="song.sequence[25]" class='seqInput col-md-1' ng-if="song.sequence[25]"/>
+            <input id='seq25' ng-model="sequence[25]" class='seqInput col-md-1' ng-if="! song.sequence[25]"/>
+            <input id='seq26' ng-model="song.sequence[26]" class='seqInput col-md-1' ng-if="song.sequence[26]"/>
+            <input id='seq26' ng-model="sequence[26]" class='seqInput col-md-1' ng-if="! song.sequence[26]"/>
+        </div>
+        <div class="row">
+          <label class='col-md-2'></label>
+          <input id='seq27' ng-model="song.sequence[27]" class='seqInput col-md-1' ng-if="song.sequence[27]"/>
+          <input id='seq27' ng-model="sequence[27]" class='seqInput col-md-1' ng-if="! song.sequence[27]"/>
+          <input id='seq28' ng-model="song.sequence[28]" class='seqInput col-md-1' ng-if="song.sequence[28]"/>
+          <input id='seq28' ng-model="sequence[28]" class='seqInput col-md-1' ng-if="! song.sequence[28]"/>
+          <input id='seq29' ng-model="song.sequence[29]" class='seqInput col-md-1' ng-if="song.sequence[29]"/>
+          <input id='seq29' ng-model="sequence[29]" class='seqInput col-md-1' ng-if="! song.sequence[29]"/>
+          <input id='seq30' ng-model="song.sequence[30]" class='seqInput col-md-1' ng-if="song.sequence[30]"/>
+          <input id='seq30' ng-model="sequence[30]" class='seqInput col-md-1' ng-if="! song.sequence[30]"/>
+          <input id='seq31' ng-model="song.sequence[31]" class='seqInput col-md-1' ng-if="song.sequence[31]"/>
+          <input id='seq31' ng-model="sequence[31]" class='seqInput col-md-1' ng-if="! song.sequence[31]"/>
+          <input id='seq32' ng-model="song.sequence[32]" class='seqInput col-md-1' ng-if="song.sequence[32]"/>
+          <input id='seq32' ng-model="sequence[32]" class='seqInput col-md-1' ng-if="! song.sequence[32]"/>
+          <input id='seq33' ng-model="song.sequence[33]" class='seqInput col-md-1' ng-if="song.sequence[33]"/>
+          <input id='seq33' ng-model="sequence[33]" class='seqInput col-md-1' ng-if="! song.sequence[33]"/>
+          <input id='seq34' ng-model="song.sequence[34]" class='seqInput col-md-1' ng-if="song.sequence[34]"/>
+          <input id='seq34' ng-model="sequence[34]" class='seqInput col-md-1' ng-if="! song.sequence[34]"/>
+          <input id='seq35' ng-model="song.sequence[35]" class='seqInput col-md-1' ng-if="song.sequence[35]"/>
+          <input id='seq35' ng-model="sequence[35]" class='seqInput col-md-1' ng-if="! song.sequence[35]"/>
+      </div>
+      <br>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='aka'>Note:</label>
+        <input class='col-md-10' type='text' id='note'
+        ng-model="song.note" />
+    </div>
+    <br>
+    <button type="submit" ng-click='updateSong()' class='col-md-offset-7 btn btn-primary' type='submit'>Update</button>
+    <a ng-href='/#!' class='btn btn-primary'>Cancel</a>
+
+</div>

@@ -1,0 +1,59 @@
+<div>
+  <div class='container gblSrchParms'>
+      <div class="row">
+          <h5 class='col-md-12'>Global Search Parameters</h5>
+        </div>
+        <div class="row">
+          <label class='col-md-1 col-md-offset-1 alignRight' for='searchByTitle'>Title:</label>
+          <input class='col-md-4' type="text" ng-model='titleSearch' name='searchByTitle'></input>
+          <label class='col-md-2 col-md-offset-1 alignRight' for='searchByPlayed'>Date Played:</label>
+          <input class='col-md-3' type='date' ng-model='playedSearch' name='searchByPlayed' />
+        </div>
+        <div class="row">
+          <label class='col-md-1 col-md-offset-1 alignRight' for='searchByMachine'>Machine:</label>
+          <input type='checkbox' ng-model='machineSearchA' value='A'>&nbsp;A &nbsp;&nbsp;&nbsp;</input>
+          <input type='checkbox' ng-model='machineSearchB' value='B'>&nbsp;B</input>
+          <button type="submit" ng-click='queryWithFilterParams()' class='col-md-offset-7 btn btn-primary' type='submit'>Search</button>
+          <button type='reset' ng-click='resetSearchParams()' class='btn btn-primary'>Reset</button>
+      </div>
+  </div>
+    <table class='table-striped table'>
+        <thead>
+            <tr>
+                <th>Song Title</th>
+                <th>Date Played</th>
+                <th>Machine</th>
+                <th>Sequence</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="song in songs.data">
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button"
+                        data-toggle="dropdown" style="max-width: 500px; white-space: normal;">
+                            {{song.title}} <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a ng-click="copySong(song._id)">Copy</a></li>
+                            <li><a href="/#!/display/song/{{song._id}}">Display</a></li>
+                            <li><a href="/#!/update/song/{{song._id}}">Update</a></li>
+                            <li><a ng-click="deleteSong(song._id)" href="/#!">Delete</a></li>
+                        </ul>
+                    </div>
+                </td>
+                <td>{{song.played | date:'MM-dd-yyyy'}}</td>
+                <td>{{song.machine}}</td>
+                <td>
+                  <table>
+                    <tr>
+                      <td ng-repeat="x in song.sequence track by $index">
+                        <div ng-if='$index %2 === 0 && x' class='even'>{{x}}</div>
+                        <div ng-if='$index %2 !== 0 && x' class='odd'>{{x}}</div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
