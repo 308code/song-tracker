@@ -19,8 +19,12 @@
     </div>
     <div class="row">
         <label class='col-md-2 alignRight' for='machine'>Machine:</label>
-        <input class='col-md-1' type='text' disabled='true' id='machine'
-        ng-model="song.machine" />
+        <select class='col-md-1' id='machine' disabled='true' ng-model="song.machine" >
+          <option value="A">A</option>
+          <option value="B">B</option>
+        </select>
+        <!-- <input class='col-md-1' type='text' disabled='true' id='machine'
+        ng-model="song.machine" /> -->
         <label class='col-md-2 alignRight' for='tithing'>Tithing Selection:</label>
         <input class='col-md-1' type='checkbox' disabled='true' id='tithing'
         ng-model="song.tithing"/>

@@ -22,18 +22,20 @@ songtracker.controller('UpdateSongTrackerCtrl', function($scope, $location, $rou
     $scope.played = new Date(songService.data.played);
 
     $scope.updateSong = function() {
-        for (var i = 0; i < $scope.aka.length; i++) {
+        for (var i = 0, j=$scope.song.aka.length; i < $scope.aka.length; i++) {
             if ("" === $scope.aka[i].trim()) {
                 //DO NOTHING
             }else{
-              $scope.song.aka[i] = $scope.aka[i].trim();
+              $scope.song.aka[j] = $scope.aka[i].trim();
+              j = j + 1;
             }
         }
-        for (var i = 0; i < $scope.sequence.length; i++) {
+        for (var i = 0, j=$scope.song.sequence.length; i < $scope.sequence.length; i++) {
             if ("" === $scope.sequence[i].trim()) {
                 //DO NOTHING
             }else{
-              $scope.song.sequence[i] = $scope.sequence[i].trim();
+              $scope.song.sequence[j] = $scope.sequence[i].trim();
+              j = j + 1;
             }
         }
         $scope.song.played = $scope.played;

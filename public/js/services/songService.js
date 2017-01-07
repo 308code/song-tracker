@@ -65,6 +65,7 @@ songtracker.service('songService', function($log, $http, $location) {
             }, function(response) {
                 $log.error('Error in the getSongs() service.\n' + response);
             });
+            $location.path("/");
         return self;
     };
 
