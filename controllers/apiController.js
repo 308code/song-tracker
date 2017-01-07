@@ -115,7 +115,6 @@ module.exports = function(app) {
             });
             newSong.save(function(err, song) {
                 if (err) throw err;
-                console.log(song.title);
                 res.send(song);
             });
         });

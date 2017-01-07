@@ -6,12 +6,16 @@ songtracker.controller('UpdateSongTrackerCtrl', function($scope, $location, $rou
     $scope.aka = new Array("", "", "", "");
 
     var findSong = function(id) {
+      if(! (songService.data instanceof Array)){
+        return songService.data;
+      }else{
         for (var i = 0; i < songService.data.length; i++) {
             if (id === songService.data[i]._id) {
                 songService.data = songService.data[i];
                 return songService.data;
             }
         }
+      }
     }
 
     $scope.song = findSong($routeParams.id);

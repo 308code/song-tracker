@@ -14,7 +14,6 @@ songtracker.controller('SongTrackerCtrl', function($scope, $location, songServic
 
     $scope.copySong = function(id){
       songService.copySong(id);
-      $location.path('/update/song/' + id);
       //$scope.songs = songService.getSongs();
     }
 

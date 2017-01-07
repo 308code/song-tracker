@@ -69,18 +69,26 @@ songtracker.service('songService', function($log, $http, $location) {
     };
 
     this.copySong = function(id) {
+      var temp;
         $http({
                 method: 'POST',
                 url: '/api/song/' + id,
                 type: 'application/json'
             })
             .then(function(response) {
-                self.data = response.data;
+              self.data = response.data;
+              $location.path("/update/song/" + response.data._id);
+            //     self.data = response.data;
+            //     return response;
+            // }, function(response) {
+            //     console.log(response);
+            // })
+            // .then(function(response) {
+            //     $location.path("/update/song/" + response.data._id);
             }, function(response) {
-                $log.info(response);
-            });
-            // console.log(self.data);
-        return self;
+                console.log(response);
+            })
+            ;
     };
 
     this.deleteSong = function(id) {
