@@ -22,24 +22,33 @@ songtracker.controller('UpdateSongTrackerCtrl', function($scope, $location, $rou
     $scope.played = new Date(songService.data.played);
 
     $scope.updateSong = function() {
-        for (var i = 0, j=$scope.song.aka.length; i < $scope.aka.length; i++) {
-            if ("" === $scope.aka[i].trim()) {
-                //DO NOTHING
-            }else{
-              $scope.song.aka[j] = $scope.aka[i].trim();
-              j = j + 1;
-            }
+      var newAka = new Array();
+      for(var i=0; i < 4; i++){
+        if(($scope.song.aka[i] && ($scope.song.aka[i].trim().length > 0) ) ){
+          newAka.push($scope.song.aka[i].trim().toUpperCase());
         }
-        for (var i = 0, j=$scope.song.sequence.length; i < $scope.sequence.length; i++) {
-            if ("" === $scope.sequence[i].trim()) {
-                //DO NOTHING
-            }else{
-              $scope.song.sequence[j] = $scope.sequence[i].trim();
-              j = j + 1;
-            }
+        if($scope.aka[i] && ($scope.aka[i].trim().length > 0)){
+          newAka.push($scope.aka[i].trim().toUpperCase());
         }
+      }
+
+      var newSequence = new Array();
+      for(var i=0; i < 36; i++){
+        if(($scope.song.sequence[i] && ($scope.song.sequence[i].trim().length > 0) ) ){
+          newSequence.push($scope.song.sequence[i].trim().toUpperCase());
+        }
+        if($scope.sequence[i] && ($scope.sequence[i].trim().length > 0)){
+          newSequence.push($scope.sequence[i].trim().toUpperCase());
+        }
+      }
+
         $scope.song.played = $scope.played;
+        $scope.song.title = $scope.song.title.toUpperCase();
+        $scope.song.aka = newAka;
+        $scope.song.sequence = newSequence;
         self.data = songService.updateSong();
         $location.path('/');
     }
+
+
 });

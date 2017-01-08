@@ -9,7 +9,12 @@ songtracker.controller('SongTrackerCtrl', function($scope, $location, songServic
     $scope.machineSearchB = false;
 
     $scope.deleteSong = function(id){
-      songService.deleteSong(id);
+      if (confirm('Are you sure you want to remove this song?')) {
+           songService.deleteSong(id);
+       } else {
+           $location.path('/');
+       }
+
     }
 
     $scope.copySong = function(id){
