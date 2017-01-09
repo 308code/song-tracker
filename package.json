@@ -1,27 +1,27 @@
 {
-  "name": "song-tracker",
-  "version": "1.0.0",
-  "description": "Record the way each song was played at FLC",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/308code/song-tracker.git"
-  },
-  "author": "Bill Camphire <bill@continuingdevelopment.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/308code/song-tracker/issues"
-  },
-  "homepage": "https://github.com/308code/song-tracker#readme",
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "ejs": "^2.5.5",
-    "express": "^4.14.0",
-    "mongoose": "^4.6.8",
-    "underscore": "^1.8.3"
-  }
+    "name": "song-tracker",
+    "version": "1.0.0",
+    "description": "Record the way each song was played at FLC",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/308code/song-tracker.git"
+    },
+    "author": "Bill Camphire <bill@continuingdevelopment.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/308code/song-tracker/issues"
+    },
+    "homepage": "https://github.com/308code/song-tracker#readme",
+    "dependencies": {
+        "body-parser": "^1.15.2",
+        "ejs": "^2.5.5",
+        "express": "^4.14.0",
+        "mongoose": "^4.6.8",
+        "underscore": "^1.8.3"
+    }
 }

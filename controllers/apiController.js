@@ -98,20 +98,19 @@ module.exports = function(app) {
         }
     });
 
-    ///////////////
     app.post('/api/song/:id', function(req, res) {
         Songs.findById({
             _id: req.params.id
         }, function(err, song) {
             if (err) throw err;
             var newSong = Songs({
-              title: song.title,
-              aka: song.aka,
-              machine: song.machine,
-              played: song.played,
-              sequence: song.sequence,
-              tithing: song.tithing,
-              note: song.note
+                title: song.title,
+                aka: song.aka,
+                machine: song.machine,
+                played: song.played,
+                sequence: song.sequence,
+                tithing: song.tithing,
+                note: song.note
             });
             newSong.save(function(err, song) {
                 if (err) throw err;
@@ -142,20 +141,6 @@ module.exports = function(app) {
             });
         });
     });
-
-    // //////////////
-    // app.delete('/api/show/delete/:id', function(req, res) {
-    //     Shows.findByIdAndRemove(req.params.id,
-    //         function(err) {
-    //             if (err) throw err;
-    //             Shows.find({}, function(err, shows) {
-    //                 if (err) throw err;
-    //                 res.send(shows);
-    //             });
-    //             //res.send('Successfully Removed!');
-    //         });
-    // });
-    // //////////////
 
     //UPDATE a single song instance from queryParams
     app.put('/api/song/:id', function(req, res) {

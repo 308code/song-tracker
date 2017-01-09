@@ -1,81 +1,73 @@
-.alignRight{
-  text-align: right;
-}
-.alignLeft{
-  align: left;
-}
-.ulHeader{
-  font-size: 20px;
-  margin-top: 55px;
-}
-.ulFooter{
-  font-size: 20px;
+.alignRight {
+    text-align: right;
 }
 
-a:link {
-    color: blue;
+.alignLeft {
+    align: left;
 }
 
-a:visited {
-    color: red;
+.ulHeader {
+    font-size: 20px;
+    margin-top: 55px;
 }
 
-a:hover {
-    color: green;
+.ulFooter {
+    font-size: 20px;
 }
 
-a:active {
-    color: orange;
+input {
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
-input{
-  margin-top: 2px;
-  margin-bottom: 2px;
-}
-.button{
-  margin-top: 5px;
+.button {
+    margin-top: 5px;
 }
 
-.content{
-  margin-top: -30px;
-  width: 100%;
-  max-height: 500px;
-  min-height: 400px;
-  overflow-y: auto;
-}
-.even{
-  font-size: 15px;
-  color: darkblue;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  background-color: #b5d4ee;
-}
-.odd{
-  font-size: 15px;
-  color: darkblue;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  background-color: #628cb1;
-}
-.srch{
-  margin-top: 5px;
-  margin-right: 10px;
-}
-.akaInput{
-  margin-left: 2px;
-  margin-right: 2px;
+.content {
+    margin-top: -30px;
+    width: 100%;
+    max-height: 500px;
+    min-height: 400px;
+    overflow-y: auto;
 }
 
-.seqInput{
-  text-align: center;
-  margin-left: 2px;
-  margin-right: 2px;
+.even {
+    font-size: 15px;
+    color: darkblue;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: #b5d4ee;
 }
 
-.display{
-  margin-top: 30px;
+.odd {
+    font-size: 15px;
+    color: darkblue;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: #628cb1;
+}
+
+.srch {
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.akaInput {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.seqInput {
+    text-align: center;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.display {
+    margin-top: 30px;
 }

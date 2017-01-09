@@ -1,5 +1,5 @@
 var songtracker = angular.module('songtracker', ['ngRoute']);
-songtracker.config(function ($routeProvider) {
+songtracker.config(function($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'static/pages/home.html',
