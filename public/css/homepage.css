@@ -4,6 +4,29 @@
 .alignLeft{
   align: left;
 }
+.ulHeader{
+  font-size: 20px;
+  margin-top: 55px;
+}
+.ulFooter{
+  font-size: 20px;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: red;
+}
+
+a:hover {
+    color: green;
+}
+
+a:active {
+    color: orange;
+}
 
 input{
   margin-top: 2px;
@@ -14,7 +37,7 @@ input{
 }
 
 .content{
-  margin-top: -50px;
+  margin-top: -30px;
   width: 100%;
   max-height: 500px;
   min-height: 400px;
@@ -38,7 +61,10 @@ input{
   padding-bottom: 1px;
   background-color: #628cb1;
 }
-
+.srch{
+  margin-top: 5px;
+  margin-right: 10px;
+}
 .akaInput{
   margin-left: 2px;
   margin-right: 2px;
@@ -48,4 +74,8 @@ input{
   text-align: center;
   margin-left: 2px;
   margin-right: 2px;
+}
+
+.display{
+  margin-top: 30px;
 }

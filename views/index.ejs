@@ -10,20 +10,26 @@
 
 <body ng-controller='SongTrackerCtrl'>
     <nav class="navbar navbar-default">
-      <div class="container">
-          <img class="col-md-3 alignLeft" alt="Faith Life Church" src='/static/images/flc_logo.png' />
-          <a href="/#!" class='col-md-offset-8 navbar-link'>Home</a>
-      </div>
+        <div class="container">
+            <img class="col-md-3 alignLeft" alt="Faith Life Church" src='/static/images/flc_logo.png' />
+            <ul class='col-md-offset-10 list-inline ulHeader'>
+                <li><a href="/#!">Home</a></li>
+                <li><a href="/#!/create/song/">Create</a></li>
+            </ul>
+        </div>
     </nav>
 
     <div class="content" ng-view>
     </div>
 
     <nav class="navbar navbar-default">
-      <div class="container">
-          <img class="col-md-2" alt="Faith Life Church" src='/static/images/flc_logo.png' />
-          <a href="/#!" class='col-md-offset-9 navbar-link'>Home</a>
-      </div>
+        <div class="container">
+            <img class="col-md-2" alt="Faith Life Church" src='/static/images/flc_logo.png' />
+            <ul class='col-md-offset-10 list-inline ulFooter'>
+                <li><a href="/#!">Home</a></li>
+                <li><a href="/#!/create/song/">Create</a></li>
+            </ul>
+        </div>
     </nav>
 
     <script src="/static/js/lib/jquery-3.1.1.min.js"></script>
@@ -35,6 +41,7 @@
     <script src="/static/js/controllers/main.js"></script>
     <script src="/static/js/controllers/display.js"></script>
     <script src="/static/js/controllers/update.js"></script>
+    <script src="/static/js/controllers/create.js"></script>
     <script src="/static/js/services/songService.js"></script>
 </body>
 

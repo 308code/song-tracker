@@ -13,4 +13,8 @@ songtracker.config(function ($routeProvider) {
             templateUrl: 'static/pages/update.html',
             controller: 'UpdateSongTrackerCtrl'
         })
+        .when('/create/song/', {
+            templateUrl: 'static/pages/create.html',
+            controller: 'CreateSongTrackerCtrl'
+        })
 });

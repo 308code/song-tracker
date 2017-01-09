@@ -9,12 +9,21 @@
           <label class='col-md-2 col-md-offset-1 alignRight' for='searchByPlayed'>Date Played:</label>
           <input class='col-md-3' type='date' ng-model='playedSearch' name='searchByPlayed' />
         </div>
+        <div class='row'>
+          <input list="songsList" ng-model='titleSearch' class="col-md-offset-2 col-md-4">
+        </div>
         <div class="row">
           <label class='col-md-1 col-md-offset-1 alignRight' for='searchByMachine'>Machine:</label>
           <input type='checkbox' ng-model='machineSearchA' value='A'>&nbsp;A &nbsp;&nbsp;&nbsp;</input>
           <input type='checkbox' ng-model='machineSearchB' value='B'>&nbsp;B</input>
-          <button type="submit" ng-click='queryWithFilterParams()' class='col-md-offset-7 btn btn-primary' type='submit'>Search</button>
-          <button type='reset' ng-click='resetSearchParams()' class='btn btn-primary'>Reset</button>
+
+
+          <datalist id="songsList">
+            <option data-ng-repeat="song in songs.data" value='{{song.title}}'>
+          </datalist>
+
+          <button type="submit" ng-click='queryWithFilterParams()' class='col-md-offset-4 btn btn-primary srch' type='submit'>Search</button>
+          <button type='reset' ng-click='resetSearchParams()' class='btn btn-primary srch'>Reset</button>
       </div>
   </div>
     <table class='table-striped table'>

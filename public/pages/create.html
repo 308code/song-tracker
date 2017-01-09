@@ -1,0 +1,93 @@
+<div class='container'>
+  <br>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='title'>Title:</label>
+        <input class='col-md-10' type='text' ng-model='title'/>
+    </div>
+    <br>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='aka'>Also Known As:</label>
+        <div>
+          <container>
+            <input id='aka0' ng-model="aka[0]" class='akaInput col-md-2'/>
+            <input id='aka1' ng-model="aka[1]" class='akaInput col-md-2'/>
+            <input id='aka2' ng-model="aka[2]" class='akaInput col-md-2'/>
+            <input id='aka3' ng-model="aka[3]" class='akaInput col-md-2'/>
+          </container>
+        </div>
+    </div>
+
+    <br>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='machine'>Machine:</label>
+        <select class='col-md-1' list='machines' id='machine'
+         ng-model="machine" >
+          <option value="A">A</option>
+          <option value="B">B</option>
+        </select>
+        <label class='col-md-2 alignRight' for='tithing'>Tithing Selection:</label>
+        <input class='col-md-1' type='checkbox' id='tithing' ng-model="tithing" />
+        <!--col-md-offset-1-->
+        <label class='col-md-2 col-md-offset-1 alignRight' for='played'>Song Played:</label>
+        <input class='col-md-3' type='date' ng-model='played' id='played'/>
+    </div>
+    <br>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='aka'>Sequence:</label>
+            <input id='seq0' ng-model="sequence[0]" class='seqInput col-md-1' />
+            <input id='seq1' ng-model="sequence[1]" class='seqInput col-md-1' />
+            <input id='seq2' ng-model="sequence[2]" class='seqInput col-md-1' />
+            <input id='seq3' ng-model="sequence[3]" class='seqInput col-md-1' />
+            <input id='seq4' ng-model="sequence[4]" class='seqInput col-md-1' />
+            <input id='seq5' ng-model="sequence[5]" class='seqInput col-md-1' />
+            <input id='seq6' ng-model="sequence[6]" class='seqInput col-md-1' />
+            <input id='seq7' ng-model="sequence[7]" class='seqInput col-md-1' />
+            <input id='seq8' ng-model="sequence[8]" class='seqInput col-md-1' />
+      </div><!--ends row-->
+      <div class="row">
+            <label class='col-md-2'></label>
+            <input id='seq9' ng-model="sequence[9]" class='seqInput col-md-1' />
+            <input id='seq10' ng-model="sequence[10]" class='seqInput col-md-1' />
+            <input id='seq11' ng-model="sequence[11]" class='seqInput col-md-1' />
+            <input id='seq12' ng-model="sequence[12]" class='seqInput col-md-1' />
+            <input id='seq13' ng-model="sequence[13]" class='seqInput col-md-1' />
+            <input id='seq14' ng-model="sequence[14]" class='seqInput col-md-1' />
+            <input id='seq15' ng-model="sequence[15]" class='seqInput col-md-1' />
+            <input id='seq16' ng-model="sequence[16]" class='seqInput col-md-1' />
+            <input id='seq17' ng-model="sequence[17]" class='seqInput col-md-1' />
+          </div><!--ends row-->
+          <div class="row">
+            <label class='col-md-2'></label>
+            <input id='seq18' ng-model="sequence[18]" class='seqInput col-md-1' />
+            <input id='seq19' ng-model="sequence[19]" class='seqInput col-md-1' />
+            <input id='seq20' ng-model="sequence[20]" class='seqInput col-md-1' />
+            <input id='seq21' ng-model="sequence[21]" class='seqInput col-md-1' />
+            <input id='seq22' ng-model="sequence[22]" class='seqInput col-md-1' />
+            <input id='seq23' ng-model="sequence[23]" class='seqInput col-md-1' />
+            <input id='seq24' ng-model="sequence[24]" class='seqInput col-md-1' />
+            <input id='seq25' ng-model="sequence[25]" class='seqInput col-md-1' />
+            <input id='seq26' ng-model="sequence[26]" class='seqInput col-md-1' />
+        </div>
+        <div class="row">
+          <label class='col-md-2'></label>
+          <input id='seq27' ng-model="sequence[27]" class='seqInput col-md-1' />
+          <input id='seq28' ng-model="sequence[28]" class='seqInput col-md-1' />
+          <input id='seq29' ng-model="sequence[29]" class='seqInput col-md-1' />
+          <input id='seq30' ng-model="sequence[30]" class='seqInput col-md-1' />
+          <input id='seq31' ng-model="sequence[31]" class='seqInput col-md-1' />
+          <input id='seq32' ng-model="sequence[32]" class='seqInput col-md-1' />
+          <input id='seq33' ng-model="sequence[33]" class='seqInput col-md-1' />
+          <input id='seq34' ng-model="sequence[34]" class='seqInput col-md-1' />
+          <input id='seq35' ng-model="sequence[35]" class='seqInput col-md-1' />
+      </div>
+      <br>
+    <div class="row">
+        <label class='col-md-2 alignRight' for='aka'>Note:</label>
+        <input class='col-md-10' type='text' id='note'
+        ng-model="note" />
+    </div>
+    <br>
+    <button type="submit" ng-click='createSong()' ng-href='/#!' class='col-md-offset-7 btn btn-primary'>Create</button>
+    <a ng-href='/#!' class='btn btn-primary'>Cancel</a>
+
+</div>
